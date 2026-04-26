@@ -4,7 +4,7 @@ export const generateQuizFromText = async (text, apiKey) => {
   if (!apiKey) throw new Error("Please enter your Gemini API Key.");
   
   const genAI = new GoogleGenerativeAI(apiKey);
-  const model = genAI.getGenerativeModel({ model: "gemini-pro" }); // Using gemini-pro which is compatible with v1 api
+  const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" }); // Using Gemini 2.5 Flash as requested
   
   const prompt = `
   You are an expert AI Quiz Generator. Your task is to extract ALL questions and their options from the provided text, and format them into a structured JSON array.
